@@ -57,6 +57,9 @@ def get_user_input() -> float:
             return km
         except ValueError:
             print("Entrer un nombre valide.")
+        except KeyboardInterrupt:
+            print("\nInterruption par l'utilisateur. Sortie du programme.")
+            exit(0)
 
 
 if __name__ == "__main__":
