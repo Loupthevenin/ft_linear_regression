@@ -45,7 +45,6 @@ def load_thetas(
     return 0.0, 0.0, Normalizer(0, 1), Normalizer(0, 1)
 
 
-# TODO: Attention au SIGINT
 def get_user_input() -> float:
     while True:
         try:
@@ -71,18 +70,4 @@ if __name__ == "__main__":
         print("⚠️  Avertissement : la valeur de km est hors des données d'entraînement.")
 
     price: float = estimate_price(km, theta0, theta1, km_norm, price_norm)
-    print(f"km_min: {km_norm.min_val}, km_max: {km_norm.max_val}")
-    print("Test prédictions extrêmes:")
-    print(
-        "km min:",
-        km_norm.min_val,
-        "-> prix estimé:",
-        estimate_price(km_norm.min_val, theta0, theta1, km_norm, price_norm),
-    )
-    print(
-        "km max:",
-        km_norm.max_val,
-        "-> prix estimé:",
-        estimate_price(km_norm.max_val, theta0, theta1, km_norm, price_norm),
-    )
     print(f"Estimate price : {price:.2f}")
