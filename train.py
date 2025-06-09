@@ -103,7 +103,7 @@ def main():
     theta0, theta1, km_norm, price_norm = train(data)
     save_thetas(theta0, theta1, km_norm, price_norm)
 
-    print(estimate_price(50000, theta0, theta1, km_norm, price_norm))
+    estimate_price(50000, theta0, theta1, km_norm, price_norm)
 
 
 if __name__ == "__main__":
